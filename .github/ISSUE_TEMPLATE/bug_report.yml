@@ -1,0 +1,57 @@
+name: 问题反馈
+ description: 报告 FOXO 使用中遇到的问题（请勿提交密钥或个人数据）
+ title: "[问题] "
+ labels: ["bug"]
+ body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请先搜索已有 Issues，并在提交前删除 API 密钥、令牌、密码、个人信息和其他敏感内容。
+  - type: input
+    id: version
+    attributes:
+      label: FOXO 版本
+      description: 如果不知道版本号，请填写“未知”。
+      placeholder: 例如：1.2.3 / 未知
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: 操作系统
+      placeholder: 例如：Windows 11
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 请按顺序描述操作步骤。
+      placeholder: |
+        1. 打开……
+        2. 选择……
+        3. 出现……
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期行为
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际行为与脱敏信息
+      description: 请移除密钥、令牌、密码和个人信息后再粘贴错误提示。
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我已搜索现有 Issues，且没有发现相同问题。
+          required: true
+        - label: 我已移除密钥、令牌、密码及个人敏感信息。
+          required: true
